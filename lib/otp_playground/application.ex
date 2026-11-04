@@ -7,7 +7,9 @@ defmodule OtpPlayground.Application do
       OtpPlayground.CalculatorSupervisor,
       OtpPlayground.AuditServer,
       OtpPlayground.MetricsServer,
-      OtpPlayground.UserSupervisor
+      OtpPlayground.UserSupervisor,
+      {Task.Supervisor, name: OtpPlayground.TaskSupervisor},
+      OtpPlayground.JobManager
     ]
 
     Supervisor.start_link(
